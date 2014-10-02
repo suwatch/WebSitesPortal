@@ -10,7 +10,7 @@ namespace WebSitesPortal.Controllers
 {
     public class ARMController : ApiController
     {
-        const string JwtToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IjVUa0d0S1JrZ2FpZXpFWTJFc0xDMmdPTGpBNCJ9.eyJhdWQiOiJodHRwczovL21hbmFnZW1lbnQuY29yZS53aW5kb3dzLm5ldC8iLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLXBwZS5uZXQvZGUzNzEwMTAtZTgwYy00MjU3LThmZGMtNGJmYTRkNmVmZTA4LyIsImlhdCI6MTQxMjIzMDIyNiwibmJmIjoxNDEyMjMwMjI2LCJleHAiOjE0MTIyMzQxMjYsInZlciI6IjEuMCIsInRpZCI6ImRlMzcxMDEwLWU4MGMtNDI1Ny04ZmRjLTRiZmE0ZDZlZmUwOCIsImFtciI6WyJwd2QiXSwiYWx0c2VjaWQiOiIxOmxpdmUuY29tOjAwMDNCRkZEQzNGODhBQjAiLCJpZHAiOiJsaXZlLmNvbSIsIm9pZCI6IjMwYjE2ZTk4LTg0ZWItNDM3Ny05ZDFjLTM2NjY1MDdjNmRjYSIsInN1YiI6IldDenpSeklGeGtIbW1zZmYyX2dWcVpoMmk3Y3VhQmZfa2l5V1RpUThaaGMiLCJlbWFpbCI6ImF1eHRtMjMwQGxpdmUuY29tIiwibmFtZSI6ImF1eHRtMjMwQGxpdmUuY29tIiwicHVpZCI6IjEwMDMzRkZGOEFGRjUxOEUiLCJ1bmlxdWVfbmFtZSI6ImxpdmUuY29tI2F1eHRtMjMwQGxpdmUuY29tIiwiYXBwaWQiOiIxOTUwYTI1OC0yMjdiLTRlMzEtYTljZi03MTc0OTU5NDVmYzIiLCJhcHBpZGFjciI6IjAiLCJzY3AiOiJ1c2VyX2ltcGVyc29uYXRpb24iLCJhY3IiOiIxIn0.PpyZ8TX48QXQ8kPP5gh_YQ4fOf0j04g60gNJF1hVtqH35POVe4Lcb2K7GNiXSUcCuCYbiljkZxXjoThQomS8zo3Zsx8stj0GgWDyEYuP1M64Xf6676zBK0eUkdvTCokibCaM76DI3719DBO0JG8trWVXXChRYxT3mCrUVksJY886vN_kLnlOYa7s4znCMX_uTV6XRh3VLPr_v2faJ2S8-8K61aUI_W67x2C-_xsWD_9972hm5S-Yz_sD3onmp8_LQ3YczNeJMKale1QdJ11aNF3wcZilcF0XRTDXZ4ZV24i_vkKvcouawkend60YyS91k7muL_GpVGu083GAhU8Obw";
+        const string JwtToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IjVUa0d0S1JrZ2FpZXpFWTJFc0xDMmdPTGpBNCJ9.eyJhdWQiOiJodHRwczovL21hbmFnZW1lbnQuY29yZS53aW5kb3dzLm5ldC8iLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLXBwZS5uZXQvZGUzNzEwMTAtZTgwYy00MjU3LThmZGMtNGJmYTRkNmVmZTA4LyIsImlhdCI6MTQxMjIzNTg4NCwibmJmIjoxNDEyMjM1ODg0LCJleHAiOjE0MTIyMzk3ODQsInZlciI6IjEuMCIsInRpZCI6ImRlMzcxMDEwLWU4MGMtNDI1Ny04ZmRjLTRiZmE0ZDZlZmUwOCIsImFtciI6WyJwd2QiXSwiYWx0c2VjaWQiOiIxOmxpdmUuY29tOjAwMDNCRkZEQzNGODhBQjAiLCJpZHAiOiJsaXZlLmNvbSIsIm9pZCI6IjMwYjE2ZTk4LTg0ZWItNDM3Ny05ZDFjLTM2NjY1MDdjNmRjYSIsInN1YiI6IldDenpSeklGeGtIbW1zZmYyX2dWcVpoMmk3Y3VhQmZfa2l5V1RpUThaaGMiLCJlbWFpbCI6ImF1eHRtMjMwQGxpdmUuY29tIiwibmFtZSI6ImF1eHRtMjMwQGxpdmUuY29tIiwicHVpZCI6IjEwMDMzRkZGOEFGRjUxOEUiLCJ1bmlxdWVfbmFtZSI6ImxpdmUuY29tI2F1eHRtMjMwQGxpdmUuY29tIiwiYXBwaWQiOiIxOTUwYTI1OC0yMjdiLTRlMzEtYTljZi03MTc0OTU5NDVmYzIiLCJhcHBpZGFjciI6IjAiLCJzY3AiOiJ1c2VyX2ltcGVyc29uYXRpb24iLCJhY3IiOiIxIn0.a5RUavG8CbCOTRN2NPBzmEfrmMK2k890hycgNIDzbvycXE8A8Z-YJQkq8tYXqVENEB47ZKZNsqFlCfTouFFNHA9Kfv1fYFqBTGRF0d8DWXaZOgbOulaYXHCMVbVu7vcb4Xpz7oyXk_vwlWYnU55DUixvfRSyUCBhqju9Qqp-zusCJpAa4qr-Y1oRJSrGKw-0hTVB-abVd9aw--6soBiuuHUpeAU4Cm1JGxHSouRgCJIouvrRUnmE4O8nx9olyMFfk7_JttGu_5zqEH8wpHJ8EqX2WNsZXqtdlzC1mW1iGoamC_NUmtGAph1kHqcFZwQsf6j3398Z3mopyCe1Fp7S_w";
         const string ScmUri = "https://migrate.scm.kudu1.antares-test.windows-int.net/";
         //const string ArmUri = "https://api-next.resources.windows-int.net";
         const string ArmUri = "https://api-current.resources.windows-int.net";
@@ -34,6 +34,11 @@ namespace WebSitesPortal.Controllers
         {
             IHttpRouteData routeData = Request.GetRouteData();
             string path = routeData.Values["path"] as string;
+            if (String.IsNullOrEmpty(path))
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, "root path is not supported");
+            }
+
             using (var client = GetClient(ArmUri ?? "https://management.azure.com"))
             {
                 return await client.GetAsync(path + "?api-version=2014-04-01");
